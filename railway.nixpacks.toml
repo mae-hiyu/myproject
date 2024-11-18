@@ -1,0 +1,14 @@
+[phases.setup]
+runtime = "python@3.9"
+
+[phases.install]
+cmds = [
+  "pip install --upgrade pip",
+  "pip install -r requirements.txt"
+]
+
+[phases.build]
+cmds = ["python manage.py collectstatic --noinput"]
+
+[phases.start]# アプリケーションの起動
+cmd = "python manage.py runserver 0.0.0.0:8000"
